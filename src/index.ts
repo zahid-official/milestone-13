@@ -4,6 +4,11 @@ function formatString(input: string, toUpper?: boolean): string {
   }
   return input.toUpperCase();
 }
+formatString("Hello");
+formatString("Hello", true);
+formatString("Hello", false);
+
+
 
 function filterByRating(
   items: { title: string; rating: number }[]
