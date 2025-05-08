@@ -11,3 +11,8 @@ function filterByRating(
   const filtered = items.filter((item) => item.rating > 4);
   return filtered;
 }
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  const arr = [] as T[];
+  return arr.concat(...arrays);
+}
