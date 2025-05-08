@@ -53,12 +53,13 @@ function processValue(value: string | number): number {
   }
   return value * 2;
 }
+processValue("hello");
+processValue(10);
 
 interface Product {
   name: string;
   price: number;
 }
-
 function getMostExpensiveProduct(products: Product[]): Product | null {
   if (products.length === 0) {
     return null;
@@ -68,6 +69,12 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   );
   return highestPrice;
 }
+const products = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 },
+];
+getMostExpensiveProduct(products);
 
 enum Day {
   Monday,
@@ -78,13 +85,13 @@ enum Day {
   Saturday,
   Sunday,
 }
-
 function getDayType(day: Day): string {
   if (day === Day.Saturday || day === Day.Sunday) {
     return "Weekend";
   }
   return "Weekday";
 }
+
 
 async function squareAsync(n: number): Promise<number> {
   return new Promise((resolve, reject) => {
