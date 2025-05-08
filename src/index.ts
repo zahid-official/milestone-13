@@ -25,8 +25,8 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   const arr = [] as T[];
   return arr.concat(...arrays);
 }
-concatenateArrays(["a", "b"], ["c"]);  
-concatenateArrays([1, 2], [3, 4], [5]); 
+concatenateArrays(["a", "b"], ["c"]);
+concatenateArrays([1, 2], [3, 4], [5]);
 
 class Vehicle {
   constructor(private make: string, private year: number) {}
@@ -43,6 +43,9 @@ class Car extends Vehicle {
     console.log(`Model: ${this.model}`);
   }
 }
+const myCar = new Car("Toyota", 2020, "Corolla");
+myCar.getInfo();
+myCar.getModel();
 
 function processValue(value: string | number): number {
   if (typeof value === "string") {
@@ -94,4 +97,3 @@ async function squareAsync(n: number): Promise<number> {
     }
   });
 }
-
