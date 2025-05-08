@@ -14,7 +14,6 @@ function filterByRating(
   const filtered = items.filter((item) => item.rating > 4);
   return filtered;
 }
-
 const books = [
   { title: "Book A", rating: 4.5 },
   { title: "Book B", rating: 3.2 },
@@ -26,6 +25,8 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   const arr = [] as T[];
   return arr.concat(...arrays);
 }
+concatenateArrays(["a", "b"], ["c"]);  
+concatenateArrays([1, 2], [3, 4], [5]); 
 
 class Vehicle {
   constructor(private make: string, private year: number) {}
