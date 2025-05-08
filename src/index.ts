@@ -16,3 +16,20 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   const arr = [] as T[];
   return arr.concat(...arrays);
 }
+
+class Vehicle {
+  constructor(private make: string, private year: number) {}
+  getInfo() {
+    console.log(`Make: ${this.make}, Year: ${this.year}`);
+  }
+}
+
+class Car extends Vehicle {
+  constructor(make: string, year: number, private model: string) {
+    super(make, year);
+  }
+
+  getModel() {
+    console.log(`Model: ${this.model}`);
+  }
+}
