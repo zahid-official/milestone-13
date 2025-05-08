@@ -33,3 +33,10 @@ class Car extends Vehicle {
     console.log(`Model: ${this.model}`);
   }
 }
+
+function processValue(value: string | number): number {
+  if (typeof value === "string") {
+    return value.length;
+  }
+  return value * 2;
+}
