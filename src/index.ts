@@ -28,7 +28,6 @@ class Car extends Vehicle {
   constructor(make: string, year: number, private model: string) {
     super(make, year);
   }
-
   getModel() {
     console.log(`Model: ${this.model}`);
   }
@@ -39,4 +38,19 @@ function processValue(value: string | number): number {
     return value.length;
   }
   return value * 2;
+}
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length === 0) {
+    return null;
+  }
+  const highestPrice = products.reduce((previousValue, currentValue) =>
+    currentValue.price > previousValue.price ? currentValue : previousValue
+  );
+  return highestPrice;
 }
