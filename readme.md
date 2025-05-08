@@ -13,9 +13,20 @@ type StringOrNumber = string | number;
 let value: StringOrNumber;
 
 value = "Hello";
-value = 123; 
+value = 123;  
 ```
-🔸 Note: **Union types** are commonly used when a variable, function parameter, or return value can be one of several types.
+### 🎯 Real-world example:
+
+```tsx
+function printId(id: string | number) {
+  console.log(`ID: ${id}`);
+}
+
+printId(101);      
+printId("A1234");  
+
+```
+🔸 **Note:** Union types are useful when a variable, function parameter, or return type can be more than one possible type.
 
 ---
 
@@ -28,11 +39,10 @@ This concept is similar to the AND (`&&`) operator in JavaScript in terms of com
 
 ### Example:
 
-```typescript
+```tsx
 type Name = {
   name: string;
 };
-
 type Age = {
   age: number;
 };
@@ -44,14 +54,45 @@ const user: Person = {
   age: 25
 };
 ```
-🔸 Note: **Union types** are commonly used when a variable, function parameter, or return value can be one of several types.
+### 🎯 Real-world example:
+
+```
+ts
+CopyEdit
+type Employee = Name & Age & { role: string };
+
+const employee: Employee = {
+  name: "Bob",
+  age: 30,
+  role: "Developer"
+};
+
+```
+🔸 **Note:** Intersection types are useful when an object must meet multiple type constraints at the same time.
 
 ---
-### In short:
 
-- **Union Type** allows a variable to be one of several types.
-- **Intersection Type** requires a variable to include all the properties from multiple types.
+## 🔹 **Key Differences**
 
+| Feature | `Union` | `Intersection` |
+| --- | --- | --- |
+| **Type Logic** | Value can be of **any one** of the listed types. | Value must satisfy **all** listed types simultaneously. |
+| **Type Safety** | More flexible, accepts a **wider range** of types. | Stricter, enforces **all type requirements**. |
+| **Use Case** | When a value could be **one of several types**. | When you need to **combine multiple type features**. |
+| **Assignments** | Valid if the value matches **at least one** of the types. | Valid only if the value matches **every** type in the intersection. |
+| **Common Use** | Useful for handling **varied input types or alternatives**. | Ideal for creating **composite objects** with multiple capabilities. |
+
+
+
+## 🔹 Conclusion
+
+- Use **Union Types** when a variable or parameter should accept **multiple alternative types**.
+- Use **Intersection Types** when you need to **combine multiple type definitions** into one.
+- Both are essential tools for building robust and flexible TypeScript applications.
+
+By understanding when and how to use union and intersection types, you can write code that's both expressive and type-safe.
+
+---
 
 
 # Explain the difference between `any`, `unknown`, and `never` types in TypeScript.
