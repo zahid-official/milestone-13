@@ -91,7 +91,8 @@ function getDayType(day: Day): string {
   }
   return "Weekday";
 }
-
+getDayType(Day.Monday); 
+getDayType(Day.Sunday); 
 
 async function squareAsync(n: number): Promise<number> {
   return new Promise((resolve, reject) => {
